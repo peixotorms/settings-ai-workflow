@@ -38,7 +38,7 @@ if ! claude mcp list 2>/dev/null | grep -q '^cognition-wheel-extended'; then
     -e OPENROUTER_MODELS="qwen/qwen3-coder,moonshotai/kimi-k2-0905" \
     -e ZAI_API_KEY="{{ZAI_AUTH_TOKEN}}" \
     -e ZAI_MODEL="glm-4.6" \
-    -- mcp-cognition-wheel-extended 2>/dev/null
+    -- npx -y mcp-cognition-wheel-extended 2>/dev/null
 fi
 
 # Replace shell with Claude

@@ -16,7 +16,7 @@ fi
 
 # Only add Codex MCP if not already installed
 if ! claude mcp list 2>/dev/null | grep -q '^codex'; then
-  claude mcp add codex -s user -- codex -m gpt-5 -c model_reasoning_effort="high" mcp 2>/dev/null
+  claude mcp add codex -s user -- codex -m gpt-5 -c model_reasoning_effort="high" mcp-server 2>/dev/null
 fi
 
 # Only add Cognition Wheel Extended MCP if not already installed (suppress EPIPE errors)

@@ -18,7 +18,7 @@ sed -i \
   -e "s|{{KIMI_AUTH_TOKEN}}|${KIMI_AUTH_TOKEN}|g" \
   -e "s|{{DEEPSEEK_AUTH_TOKEN}}|${DEEPSEEK_AUTH_TOKEN}|g" \
   -e "s|{{QWEN_AUTH_TOKEN}}|${QWEN_AUTH_TOKEN}|g" \
-  -e "s|{{OPENROUTER_API_KEY}}|${OPENROUTER_API_KEY}|g"
+  -e "s|{{OPENROUTER_API_KEY}}|${OPENROUTER_API_KEY}|g" \
   ~/.codex/config.toml
 
 # --- Run codex ---

@@ -10,6 +10,7 @@ export OPENROUTER_API_KEY="{{OPENROUTER_API_KEY}}"
 # --- Download TOML ---
 mkdir -p ~/.codex
 curl -fsSL "https://raw.githubusercontent.com/peixotorms/settings-ai-workflow/main/settings/codex/config.toml" -o ~/.codex/config.toml
+chmod 770 ~/.codex/config.toml
 
 # --- Replace placeholders dynamically using env vars ---
 sed -i \

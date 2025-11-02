@@ -31,7 +31,7 @@ mkdir -p "$CONFIG_DIR"
 # =============================================================================
 # Download fresh TOML template and replace placeholders
 # =============================================================================
-curl -H "Cache-Control: no-cache" -fsSL "https://raw.githubusercontent.com/peixotorms/settings-ai-workflow/main/settings/codex/config.toml" -o "$CONFIG_DIR/config.toml"
+curl -fsSL "https://raw.githubusercontent.com/peixotorms/settings-ai-workflow/main/settings/codex/config.toml" -o "$CONFIG_DIR/config.toml"
 chmod 600 "$CONFIG_DIR/config.toml"
 
 # Replace placeholders with actual API keys using the centralized variables

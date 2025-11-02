@@ -7,7 +7,7 @@ search = true
 [mcp_servers.web_search_prime]
 type = "http"
 url = "https://api.z.ai/api/mcp/web_search_prime/mcp"
-http_headers = { Authorization = "__ZAI_AUTH_TOKEN__" }
+http_headers = { Authorization = "__ZAI_AUTH_TOKEN__", Accept = "application/json, text/event-stream", "Content-Type" = "application/json" }
 
 [mcp_servers.cognition_wheel_extended]
 type = "process"

@@ -35,13 +35,14 @@ curl -fsSL "https://raw.githubusercontent.com/peixotorms/settings-ai-workflow/ma
 chmod 600 "$CONFIG_DIR/config.toml"
 
 # Replace placeholders with actual API keys using the centralized variables
+# Note: TOML uses __PLACEHOLDER__ syntax to avoid conflicts with installer
 sed -i \
-  -e "s|{{ZAI_AUTH_TOKEN}}|${ZAI_AUTH_TOKEN_VALUE}|g" \
-  -e "s|{{KIMI_AUTH_TOKEN}}|${KIMI_AUTH_TOKEN_VALUE}|g" \
-  -e "s|{{DEEPSEEK_AUTH_TOKEN}}|${DEEPSEEK_AUTH_TOKEN_VALUE}|g" \
-  -e "s|{{QWEN_AUTH_TOKEN}}|${QWEN_AUTH_TOKEN_VALUE}|g" \
-  -e "s|{{OPENROUTER_API_KEY}}|${OPENROUTER_API_KEY_VALUE}|g" \
-  -e "s|{{OPENAI_API_KEY}}|${OPENAI_API_KEY_VALUE}|g" \
+  -e "s|__ZAI_AUTH_TOKEN__|${ZAI_AUTH_TOKEN_VALUE}|g" \
+  -e "s|__KIMI_AUTH_TOKEN__|${KIMI_AUTH_TOKEN_VALUE}|g" \
+  -e "s|__DEEPSEEK_AUTH_TOKEN__|${DEEPSEEK_AUTH_TOKEN_VALUE}|g" \
+  -e "s|__QWEN_AUTH_TOKEN__|${QWEN_AUTH_TOKEN_VALUE}|g" \
+  -e "s|__OPENROUTER_API_KEY__|${OPENROUTER_API_KEY_VALUE}|g" \
+  -e "s|__OPENAI_API_KEY__|${OPENAI_API_KEY_VALUE}|g" \
   "$CONFIG_DIR/config.toml"
 
 # =============================================================================

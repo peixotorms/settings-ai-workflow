@@ -7,10 +7,10 @@ search = true
 [mcp_servers.web_search_prime]
 type = "http"
 url = "https://api.z.ai/api/mcp/web_search_prime/mcp"
-http_headers = { Authorization = "{{ZAI_AUTH_TOKEN}}" }
+http_headers = { Authorization = "__ZAI_AUTH_TOKEN__" }
 
 [mcp_servers.cognition_wheel_extended]
 type = "process"
 command = "npx"
 args = ["-y", "mcp-cognition-wheel-extended"]
-env = { DEEPSEEK_API_KEY = "{{DEEPSEEK_AUTH_TOKEN}}", DEEPSEEK_MODEL = "deepseek-chat", OPENROUTER_API_KEY = "{{OPENROUTER_API_KEY}}", OPENROUTER_MODELS = "qwen/qwen3-coder,moonshotai/kimi-k2-0905", ZAI_API_KEY = "{{ZAI_AUTH_TOKEN}}", ZAI_MODEL = "glm-4.6" }
+env = { DEEPSEEK_API_KEY = "__DEEPSEEK_AUTH_TOKEN__", DEEPSEEK_MODEL = "deepseek-chat", OPENROUTER_API_KEY = "__OPENROUTER_API_KEY__", OPENROUTER_MODELS = "qwen/qwen3-coder,moonshotai/kimi-k2-0905", ZAI_API_KEY = "__ZAI_AUTH_TOKEN__", ZAI_MODEL = "glm-4.6" }

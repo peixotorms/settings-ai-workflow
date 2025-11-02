@@ -4,13 +4,10 @@ approval_policy = "on-failure"
 sandbox_mode = "workspace-write"
 search = true
 
-[mcp_servers.web_search_prime]
-type = "http"
-url = "https://api.z.ai/api/mcp/web_search_prime/mcp"
-http_headers = { Authorization = "__ZAI_AUTH_TOKEN__", Accept = "application/json, text/event-stream", "Content-Type" = "application/json" }
+[features]
+rmcp_client=true
+web_search_request=true
 
-[mcp_servers.cognition_wheel_extended]
-type = "process"
+[mcp_servers.chrome-devtools]
 command = "npx"
-args = ["-y", "mcp-cognition-wheel-extended"]
-env = { DEEPSEEK_API_KEY = "__DEEPSEEK_AUTH_TOKEN__", DEEPSEEK_MODEL = "deepseek-chat", OPENROUTER_API_KEY = "__OPENROUTER_API_KEY__", OPENROUTER_MODELS = "qwen/qwen3-coder,moonshotai/kimi-k2-0905", ZAI_API_KEY = "__ZAI_AUTH_TOKEN__", ZAI_MODEL = "glm-4.6" }
+args = ["-y", "chrome-devtools-mcp@latest"]

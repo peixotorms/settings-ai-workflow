@@ -1,47 +1,16 @@
-# Codex Configuration File Template
-# Placeholders will be replaced by the wrapper script on each run
+model = "gpt-5"
+model_reasoning_effort = "high"
+approval_policy = "on-failure"
+sandbox_mode = "workspace-write"
+search = true
 
-[default]
-model = "gpt-4o"
-sandbox = "workspace-write"
-approval-policy = "untrusted"
+[mcp_servers.web_search_prime]
+type = "http"
+url = "https://api.z.ai/api/mcp/web_search_prime/mcp"
+http_headers = { Authorization = "{{ZAI_AUTH_TOKEN}}" }
 
-# OpenAI Configuration
-[providers.openai]
-api_key = "{{OPENAI_API_KEY}}"
-base_url = "https://api.openai.com/v1"
-
-# DeepSeek Configuration
-[providers.deepseek]
-api_key = "{{DEEPSEEK_AUTH_TOKEN}}"
-base_url = "https://api.deepseek.com/v1"
-
-# Kimi Configuration
-[providers.kimi]
-api_key = "{{KIMI_AUTH_TOKEN}}"
-base_url = "https://api.moonshot.cn/v1"
-
-# ZAI (GLM) Configuration
-[providers.zai]
-api_key = "{{ZAI_AUTH_TOKEN}}"
-base_url = "https://open.bigmodel.cn/api/paas/v4"
-
-# Qwen Configuration
-[providers.qwen]
-api_key = "{{QWEN_AUTH_TOKEN}}"
-base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
-
-# OpenRouter Configuration
-[providers.openrouter]
-api_key = "{{OPENROUTER_API_KEY}}"
-base_url = "https://openrouter.ai/api/v1"
-
-# Model aliases for easier access
-[models]
-gpt4o = { provider = "openai", model = "gpt-4o" }
-gpt5 = { provider = "openai", model = "gpt-5" }
-deepseek = { provider = "deepseek", model = "deepseek-chat" }
-kimi = { provider = "kimi", model = "moonshot-v1-8k" }
-glm4 = { provider = "zai", model = "glm-4" }
-qwen = { provider = "qwen", model = "qwen-max" }
-claude = { provider = "openrouter", model = "anthropic/claude-3.5-sonnet" }
+[mcp_servers.cognition_wheel_extended]
+type = "process"
+command = "npx"
+args = ["-y", "mcp-cognition-wheel-extended"]
+env = { DEEPSEEK_API_KEY = "{{DEEPSEEK_AUTH_TOKEN}}", DEEPSEEK_MODEL = "deepseek-chat", OPENROUTER_API_KEY = "{{OPENROUTER_API_KEY}}", OPENROUTER_MODELS = "qwen/qwen3-coder,moonshotai/kimi-k2-0905", ZAI_API_KEY = "{{ZAI_AUTH_TOKEN}}", ZAI_MODEL = "glm-4.6" }

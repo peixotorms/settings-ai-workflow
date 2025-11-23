@@ -27,7 +27,7 @@ claude mcp add codex -s user -- codex -m gpt-5 -c model_reasoning_effort="high" 
 # Add Cognition Wheel Extended MCP
 claude mcp add cognition-wheel-extended -s user \
   -e OPENAI_API_KEY="{{OPENAI_API_KEY}}" \
-  -e OPENAI_MODEL="gpt-5" \
+  -e OPENAI_MODEL="gpt-5.1" \
   -e OPENAI_REASONING_EFFORT="high" \
   -e DEEPSEEK_API_KEY="{{DEEPSEEK_AUTH_TOKEN}}" \
   -e DEEPSEEK_MODEL="deepseek-chat" \
